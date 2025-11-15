@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>赛事信息</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">羽毛球运动</h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">首页</a></li>
+                <li><a href="#" class="hover:underline">规则</a></li>
+                <li><a href="#" class="hover:underline">装备</a></li>
+                <li><a href="#" class="hover:underline">技巧</a></li>
+                <li><a href="events.html" class="hover:underline">赛事</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 赛事信息 -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">
+            <i class="fas fa-trophy mr-2"></i>
+            赛事信息
+        </h2>
+        
+        <!-- 赛事日程 -->
+        <div class="mb-16">
+            <h3 class="text-2xl font-bold mb-6 border-b pb-2">赛事日程</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://pic.rmb.bdstatic.com/bjh/news/25c8aff510cab340fa2d97286823f7ed.jpeg@q_90" 
+                             alt="全英公开赛" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">全英公开赛</h4>
+                    <p class="text-gray-600 mb-2">2025年3月11日-16日</p>
+                    <p class="mb-2">伯明翰, 英国</p>
+                    <p class="text-sm text-gray-500 mb-4">奖金: $1,000,000</p>
+                    <a href="#" class="text-blue-600 hover:underline">查看详情</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://pic.rmb.bdstatic.com/a3dab8514dddb44158ef34673e022eb8.jpeg" 
+                             alt="世界锦标赛" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">世界锦标赛</h4>
+                    <p class="text-gray-600 mb-2">2025年8月25日-31日</p>
+                    <p class="mb-2">哥本哈根, 丹麦</p>
+                    <p class="text-sm text-gray-500 mb-4">奖金: $1,500,000</p>
+                    <a href="#" class="text-blue-600 hover:underline">查看详情</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="relative h-48 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://img2.baidu.com/it/u=2576617908,2668561610&fm=253&fmt=auto&app=120&f=JPEG?w=807&h=500" 
+                             alt="奥运会" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">奥运会</h4>
+                    <p class="text-gray-600 mb-2">2024年7月27日-8月4日</p>
+                    <p class="mb-2">巴黎, 法国</p>
+                    <p class="text-sm text-gray-500 mb-4">最高荣誉赛事</p>
+                    <a href="#" class="text-blue-600 hover:underline">查看详情</a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 比赛结果 -->
+        <div>
+            <h3 class="text-2xl font-bold mb-6 border-b pb-2">最新比赛结果</h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-3 px-4 text-left">赛事</th>
+                            <th class="py-3 px-4 text-left">项目</th>
+                            <th class="py-3 px-4 text-left">冠军</th>
+                            <th class="py-3 px-4 text-left">亚军</th>
+                            <th class="py-3 px-4 text-left">比分</th>
+                            <th class="py-3 px-4 text-left">日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">2024全英公开赛</td>
+                            <td class="py-3 px-4">男单</td>
+                            <td class="py-3 px-4">维克托·阿萨尔森</td>
+                            <td class="py-3 px-4">李诗沣</td>
+                            <td class="py-3 px-4">21-15, 21-17</td>
+                            <td class="py-3 px-4">2024.03.17</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">2024全英公开赛</td>
+                            <td class="py-3 px-4">女单</td>
+                            <td class="py-3 px-4">安洗莹</td>
+                            <td class="py-3 px-4">陈雨菲</td>
+                            <td class="py-3 px-4">21-19, 21-13</td>
+                            <td class="py-3 px-4">2024.03.17</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4">2024印尼大师赛</td>
+                            <td class="py-3 px-4">男双</td>
+                            <td class="py-3 px-4">阿尔菲安/阿迪安托</td>
+                            <td class="py-3 px-4">谢定峰/苏伟译</td>
+                            <td class="py-3 px-4">21-18, 21-16</td>
+                            <td class="py-3 px-4">2024.01.28</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-blue-600 p-4 text-white text-center">
+        <p>&copy; 2025 羽毛球运动网. 保留所有权利.</p>
+    </footer>
+</body>
+</html>

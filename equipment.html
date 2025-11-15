@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>羽毛球装备</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .equipment-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">羽毛球运动</h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">首页</a></li>
+                <li><a href="rules.html" class="hover:underline">规则</a></li>
+                <li><a href="equipment.html" class="hover:underline">装备</a></li>
+                <li><a href="techniques.html" class="hover:underline">技巧</a></li>
+                <li><a href="events.html" class="hover:underline">赛事</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 装备内容 -->
+    <section class="bg-gray-200 py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">必备装备</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                    <i class="fas fa-table-tennis equipment-icon"></i>
+                    <img src="https://www.yonex.cn/public/uploads/20240219/09c795e1760c48e0e1b0d7d1d630bd1b.jpg" alt="羽毛球拍" class="w-200 h-48 object-cover mb-4">
+                    <h3 class="text-2xl font-bold mb-2">羽毛球拍</h3>
+                    <p class="mb-4">选择适合自己的羽毛球拍，能提升你的击球效果。</p>
+                    <ul class="text-left list-disc pl-5">
+                        <li>重量：3U(85-89g)或4U(80-84g)</li>
+                        <li>平衡点：头重型或平衡型</li>
+                        <li>线张力：20-30磅</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                    <i class="fas fa-feather equipment-icon"></i>
+                    <img src="http://uf.yoger.com.cn/Editor/201811/20181110161674737473.jpg" alt="羽毛球" class="w-200 h-48 object-cover mb-4">
+                    <h3 class="text-2xl font-bold mb-2">羽毛球</h3>
+                    <p class="mb-4">优质的羽毛球能保证飞行的稳定性和耐用性。</p>
+                    <ul class="text-left list-disc pl-5">
+                        <li>鹅毛球：比赛级</li>
+                        <li>鸭毛球：训练用</li>
+                        <li>尼龙球：耐用经济</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                    <i class="fas fa-shoe-prints equipment-icon"></i>
+                    <img src="https://www.yonex.cn/public/uploads/20230301/89857c7e1b95aaa8478e1d2b3313c70a.jpg" alt="羽毛球鞋" class="w-200 h-48 object-cover mb-4">
+                    <h3 class="text-2xl font-bold mb-2">羽毛球鞋</h3>
+                    <p class="mb-4">专业的羽毛球鞋能提供良好的支撑和防滑性能。</p>
+                    <ul class="text-left list-disc pl-5">
+                        <li>防滑橡胶底</li>
+                        <li>足弓支撑</li>
+                        <li>轻量化设计</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 装备选购指南 -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">装备选购指南</h2>
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold mb-4">如何选择适合自己的装备？</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">初学者</h4>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>选择平衡型球拍(4U重量)</li>
+                        <li>中低张力(22-24磅)</li>
+                        <li>训练用鸭毛球</li>
+                        <li>基础款羽毛球鞋</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-2">进阶选手</h4>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>根据打法选择头重型或头轻型</li>
+                        <li>高张力(26-28磅)</li>
+                        <li>比赛级鹅毛球</li>
+                        <li>专业级羽毛球鞋</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-blue-600 p-4 text-white text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 羽毛球运动网. 保留所有权利.</p>
+            <div class="mt-2 flex justify-center space-x-4">
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+    
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    </body>
+    
+    </html>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            
+            if(name === '' || email === '' || subject === '' || message === '') {
+                alert('请填写所有必填字段');
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

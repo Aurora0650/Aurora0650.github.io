@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>羽毛球规则</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .rule-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">羽毛球运动</h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">首页</a></li>
+                <li><a href="rules.html" class="hover:underline">规则</a></li>
+                <li><a href="equipment.html" class="hover:underline">装备</a></li>
+                <li><a href="techniques.html" class="hover:underline">技巧</a></li>
+                <li><a href="events.html" class="hover:underline">赛事</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 规则内容 -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">羽毛球规则</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-clipboard-list rule-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">基本规则</h3>
+                <p class="mb-4">羽毛球比赛通常分为单打和双打。每场比赛采用三局两胜制，每局先得21分者获胜。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>比赛采用21分制</li>
+                    <li>每球得分制</li>
+                    <li>20平后需领先2分</li>
+                    <li>29平后先到30分者胜</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-table-tennis rule-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">发球规则</h3>
+                <p class="mb-4">发球时，发球员的球拍必须先击中球托，整个球要低于发球员的腰部。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>球拍击球瞬间低于1.15米</li>
+                    <li>双脚不能移动</li>
+                    <li>必须对角发球</li>
+                    <li>单打发球区较窄</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-flag rule-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">犯规规则</h3>
+                <p class="mb-4">了解常见犯规行为，避免在比赛中失分。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>击球时触网</li>
+                    <li>球拍过网击球</li>
+                    <li>球落在界外</li>
+                    <li>阻挡对方击球</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 比赛视频示例 -->
+    <section class="container mx-auto py-16 bg-gray-50">
+        <h2 class="text-3xl font-bold text-center mb-8">比赛规则演示</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-lg" src="https://haokan.baidu.com/v?pd=wisenatural&vid=12723882992103301827" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                <h3 class="text-xl font-bold mt-4">发球规则详解</h3>
+                <p class="text-gray-600">专业裁判讲解发球规则要点</p>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-lg" src="https://www.bilibili.com/video/BV1aP41117Ji?t=6.6" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                <h3 class="text-xl font-bold mt-4">常见犯规分析</h3>
+                <p class="text-gray-600">比赛中的典型犯规案例解析</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-blue-600 p-4 text-white text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 羽毛球运动网. 保留所有权利.</p>
+            <div class="mt-2 flex justify-center space-x-4">
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

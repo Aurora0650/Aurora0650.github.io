@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>羽毛球运动</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* 新增响应式设计 */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- 导航栏 - 页面顶部导航菜单，包含网站主要链接 -->
+    <nav class="bg-blue-600 p-4 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold flex items-center">
+                <i class="fas fa-table-tennis-paddle-ball mr-2"></i>
+                羽毛球运动
+            </h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">首页</a></li>
+                <li><a href="rules.html" class="hover:underline">规则</a></li>
+                <li><a href="equipment.html" class="hover:underline">装备</a></li>
+                <li><a href="techniques.html" class="hover:underline">技巧</a></li>
+                <li><a href="events.html" class="hover:underline">赛事</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 - 页面主视觉区域，展示主要宣传内容 -->
+    <section class="bg-cover bg-center py-24" style="background-image: url('https://copyright.bdstatic.com/vcg/creative/2ec23b2d8a906bb27793eba1a568559c.jpg@wm_1,k_cGljX2JqaHdhdGVyLmpwZw==');" data-aos="fade-up">
+        <div class="container mx-auto text-center text-white">
+            <h2 class="text-4xl font-bold mb-4">畅享羽毛球乐趣</h2>
+            <p class="text-lg mb-8">    羽毛球是一项充满活力与挑战的运动，快来加入我们！</p>
+            <a href="#" class="bg-white text-blue-600 py-2 px-4 rounded-full hover:bg-blue-100">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 规则介绍 - 羽毛球基本规则和发球规则说明区域 -->
+    <section class="container mx-auto py-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center mb-8">羽毛球规则</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                <h3 class="text-2xl font-bold mb-4">基本规则</h3>
+                <p>    羽毛球比赛通常分为单打和双打。每场比赛采用三局两胜制，每局先得21分者获胜。</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                <h3 class="text-2xl font-bold mb-4">发球规则</h3>
+                <p>    发球时，发球员的球拍必须先击中球托，整个球要低于发球员的腰部。发球时，球拍击球瞬间，球的整体应低于发球员的胸部。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 装备展示 - 羽毛球运动必备装备介绍区域 -->
+    <section class="bg-gray-200 py-16" data-aos="fade-up">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                <i class="fas fa-tshirt mr-2"></i>
+                必备装备
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect transition-all duration-300">
+                    <div class="relative overflow-hidden rounded-t-lg h-48">
+                        <img src="https://www.yonex.cn/public/uploads/20240219/09c795e1760c48e0e1b0d7d1d630bd1b.jpg"  alt="羽毛球拍" class="w-200 h-48 object-cover mb-4">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">羽毛球拍</h3>
+                    <p>选择适合自己的羽毛球拍，能提升你的击球效果。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <!-- 修改图片地址 -->
+                    <img src="http://uf.yoger.com.cn/Editor/201811/20181110161674737473.jpg" alt="羽毛球" class="w-200 h-48 object-cover mb-4">
+                    <h3 class="text-2xl font-bold mb-2">羽毛球</h3>
+                    <p>优质的羽毛球能保证飞行的稳定性和耐用性。</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <!-- 修改图片地址 -->
+                    <img src="https://www.yonex.cn/public/uploads/20230301/89857c7e1b95aaa8478e1d2b3313c70a.jpg" alt="羽毛球鞋" class="w-200 h-48 object-cover mb-4">
+                    <h3 class="text-2xl font-bold mb-2">羽毛球鞋</h3>
+                    <p>专业的羽毛球鞋能提供良好的支撑和防滑性能。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技巧分享 - 羽毛球发球和击球技巧说明区域 -->
+    <section class="container mx-auto py-16" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center mb-8">实用技巧</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                <h3 class="text-2xl font-bold mb-4">发球技巧</h3>
+                <p>发球时要注意力度和角度的控制，根据对手的站位选择合适的发球方式。</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                <h3 class="text-2xl font-bold mb-4">击球技巧</h3>
+                <p>掌握正确的击球姿势和发力方法，能让你的击球更有力、更准确。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事展示 - 近期重要羽毛球赛事信息区域 -->
+    <section class="bg-gray-200 py-16" data-aos="fade-up">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">
+                <i class="fas fa-trophy mr-2"></i>
+                近期赛事
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">全英公开赛</h3>
+                    <p class="text-gray-600 mb-2">2025年3月11日-16日</p>
+                    <p>羽毛球界历史最悠久的赛事，被誉为"小世锦赛"。</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">赛事详情</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">世界锦标赛</h3>
+                    <p class="text-gray-600 mb-2">2025年8月25日-31日</p>
+                    <p>羽毛球最高级别单项赛事，全球顶尖选手的巅峰对决。</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">赛事详情</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">奥运会</h3>
+                    <p class="text-gray-600 mb-2">2024年7月27日-8月4日</p>
+                    <p>2024巴黎奥运会羽毛球比赛，全球瞩目的体育盛事。</p>
+                    <a href="#" class="text-blue-600 hover:underline mt-4 inline-block">赛事详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+<!-- 新增训练建议区块 -->
+<section class="container mx-auto py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-center mb-8">训练建议</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">力量训练</h3>
+            <p>每周2-3次力量训练，重点加强核心和下肢力量。</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">挥拍训练</h3>
+            <p>每周2-3次挥拍训练，每次3组，每组100个，使挥拍更熟练。</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-effect">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-dumbbell"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">拉伸训练</h3>
+            <p>每次打球后训练，避免拉伤。</p>
+        </div>
+    </section>
+</body>
+</html>
+    
+
+ 
+
+<!-- 常见问题解答 -->
+<section class="bg-white py-16" data-aos="fade-up">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">
+            <i class="fas fa-question-circle mr-2"></i>
+            常见问题
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold mb-2 flex items-center cursor-pointer">
+                    <i class="fas fa-chevron-right mr-2 text-blue-600"></i>
+                    羽毛球拍应该选择什么重量？
+                </h3>
+                <p class="text-gray-700 pl-6">初学者建议选择较轻的球拍(85-89g)，进阶选手可以选择中等重量(90-94g)，专业选手可选择较重球拍(95g以上)。</p>
+            </div>
+            <div class="mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold mb-2 flex items-center cursor-pointer">
+                    <i class="fas fa-chevron-right mr-2 text-blue-600"></i>
+                    羽毛球多久更换一次？
+                </h3>
+                <p class="text-gray-700 pl-6">业余选手每周打2-3次，建议每3个月更换一次。专业选手根据使用频率，建议1-2个月更换。</p>
+            </div>
+            <div class="mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold mb-2 flex items-center cursor-pointer">
+                    <i class="fas fa-chevron-right mr-2 text-blue-600"></i>
+                    如何选择合适的羽毛球鞋？
+                </h3>
+                <p class="text-gray-700 pl-6">选择轻便、防滑、支撑性好的专业羽毛球鞋，鞋底应为无痕橡胶材质。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系表单 -->
+<section class="bg-gray-200 py-16" data-aos="fade-up">
+    <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-8">
+            <i class="fas fa-envelope mr-2"></i>
+            联系我们
+        </h2>
+        <form class="bg-white p-8 rounded-lg shadow-md" onsubmit="return validateForm()">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label for="name" class="block text-gray-700 mb-2">姓名</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-gray-700 mb-2">邮箱</label>
+                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="subject" class="block text-gray-700 mb-2">主题</label>
+                <input type="text" id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 mb-2">留言内容</label>
+                <textarea id="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300 w-full md:w-auto">
+                发送留言
+            </button>
+        </form>
+    </div>
+</section>
+
+<!-- 页脚 - 网站版权信息区域 -->
+<footer class="bg-blue-600 p-4 text-white text-center">
+    <p>&copy; 2025 羽毛球运动网. 保留所有权利.</p>
+    <div class="mt-2 flex justify-center space-x-4">
+        <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+</footer>
+
+<button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var backToTop = document.getElementById('back-to-top');
+        if (window.pageYOffset > 300) {
+            backToTop.classList.remove('hidden');
+        } else {
+            backToTop.classList.add('hidden');
+        }
+    });
+
+    document.getElementById('back-to-top').addEventListener('click', function() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+
+</html>
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var subject = document.getElementById('subject').value;
+        var message = document.getElementById('message').value;
+        
+        if(name === '' || email === '' || subject === '' || message === '') {
+            alert('请填写所有必填字段');
+            return false;
+        }
+        
+        return true;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <title>羽毛球技巧</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">羽毛球运动</h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">首页</a></li>
+                <li><a href="rules.html" class="hover:underline">规则</a></li>
+                <li><a href="equipment.html" class="hover:underline">装备</a></li>
+                <li><a href="techniques.html" class="hover:underline">技巧</a></li>
+                <li><a href="events.html" class="hover:underline">赛事</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 技巧内容 -->
+    <section class="container mx-auto py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">实用技巧</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-table-tennis skill-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">发球技巧</h3>
+                <p class="mb-4">发球时要注意力度和角度的控制，根据对手的站位选择合适的发球方式。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>高远球发球</li>
+                    <li>短球发球</li>
+                    <li>平快球发球</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-table-tennis-paddle skill-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">击球技巧</h3>
+                <p class="mb-4">掌握正确的击球姿势和发力方法，能让你的击球更有力、更准确。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>正手击球</li>
+                    <li>反手击球</li>
+                    <li>扣杀技巧</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md hover-effect text-center">
+                <i class="fas fa-running skill-icon"></i>
+                <h3 class="text-2xl font-bold mb-4">步法技巧</h3>
+                <p class="mb-4">正确的步法能让你在场上移动更迅速，节省体力。</p>
+                <ul class="text-left list-disc pl-5">
+                    <li>前场步法</li>
+                    <li>中场步法</li>
+                    <li>后场步法</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技巧视频 -->
+    <section class="container mx-auto py-16 bg-gray-50">
+        <h2 class="text-3xl font-bold text-center mb-8">技巧视频</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-lg" src="https://haokan.baidu.com/v?pd=wisenatural&vid=6368170760254017283" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                <h3 class="text-xl font-bold mt-4">发球技巧教学</h3>
+                <p class="text-gray-600">学习专业选手的发球技巧和战术应用</p>
+            </div>
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe class="w-full h-96 rounded-lg" src="https://www.bilibili.com/video/BV1GZ22YCE6u?t=5.2" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                <h3 class="text-xl font-bold mt-4">扣杀技巧教学</h3>
+                <p class="text-gray-600">掌握强力扣杀的正确姿势和发力技巧</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-blue-600 p-4 text-white text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2025 羽毛球运动网. 保留所有权利.</p>
+            <div class="mt-2 flex justify-center space-x-4">
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
