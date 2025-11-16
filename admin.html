@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言管理</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .messages-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .message-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        .message-item:last-child {
+            border-bottom: none;
+        }
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .message-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .message-email {
+            color: #3498db;
+        }
+        .message-subject {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .message-content {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .message-timestamp {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        .delete-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .delete-btn:hover {
+            background-color: #c0392b;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-btn:hover {
+            background-color: #2980b9;
+        }
+        /* 登录表单样式 */
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .logout-btn {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">返回首页</a>
+        
+        <!-- 登录表单 -->
+        <div class="login-container" id="loginContainer">
+            <h2>管理员登录</h2>
+            <div class="form-group">
+                <label for="username">用户名</label>
+                <input type="text" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" placeholder="请输入密码">
+            </div>
+            <button class="btn" onclick="login()">登录</button>
+        </div>
+        
+        <!-- 留言管理区域 -->
+        <div id="adminContent" style="display: none;">
+            <button class="logout-btn" onclick="logout()">退出登录</button>
+            <h1>留言管理</h1>
+            <div class="messages-container" id="messagesContainer">
+                <!-- 留言将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 默认管理员 credentials (可修改)
+        const ADMIN_USERNAME = 'admin';
+        const ADMIN_PASSWORD = 'password';
+
+        // 页面加载完成后检查登录状态
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+        });
+
+        // 检查登录状态
+        function checkLoginStatus() {
+            const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
+            if (isLoggedIn) {
+                showAdminContent();
+            } else {
+                showLoginForm();
+            }
+        }
+
+        // 显示登录表单
+        function showLoginForm() {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('adminContent').style.display = 'none';
+        }
+
+        // 显示管理员内容
+        function showAdminContent() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('adminContent').style.display = 'block';
+            loadMessages();
+        }
+
+        // 登录函数
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                localStorage.setItem('adminLoggedIn', 'true');
+                showAdminContent();
+            } else {
+                alert('用户名或密码错误');
+            }
+        }
+
+        // 退出登录函数
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            showLoginForm();
+        }
+
+        // 加载留言
+        function loadMessages() {
+            // 从localStorage读取留言
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            const container = document.getElementById('messagesContainer');
+            
+            if (messages.length === 0) {
+                container.innerHTML = '<p>没有留言</p>';
+                return;
+            }
+
+            // 清空容器
+            container.innerHTML = '';
+
+            // 渲染每个留言
+            messages.forEach(message => {
+                const messageItem = document.createElement('div');
+                messageItem.className = 'message-item';
+                messageItem.dataset.id = message.id;
+
+                messageItem.innerHTML = `
+                    <div class="message-header">
+                        <div>
+                            <span class="message-name">${message.name}</span>
+                            <span class="message-email"> (${message.email})</span>
+                        </div>
+                        <button class="delete-btn" onclick="deleteMessage('${message.id}')">删除</button>
+                    </div>
+                    <div class="message-subject">${message.subject}</div>
+                    <div class="message-content">${message.message}</div>
+                    <div class="message-timestamp">${message.timestamp}</div>
+                `;
+
+                container.appendChild(messageItem);
+            });
+        }
+
+        // 删除留言
+        function deleteMessage(messageId) {
+            if (confirm('确定要删除这条留言吗？')) {
+                // 从localStorage读取留言
+                let messages = JSON.parse(localStorage.getItem('messages')) || [];
+                
+                // 过滤掉要删除的留言
+                messages = messages.filter(message => message.id !== messageId);
+                
+                // 将更新后的留言保存回localStorage
+                localStorage.setItem('messages', JSON.stringify(messages));
+                
+                // 重新加载留言
+                loadMessages();
+            }
+        }
+    </script>
+</body>
+</html>
