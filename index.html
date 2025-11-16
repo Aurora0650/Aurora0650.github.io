@@ -261,6 +261,9 @@
         <a href="#" class="hover:text-blue-200"><i class="fab fa-instagram"></i></a>
     </div>
     <div class="mt-2">
+        <p>累计访客人数: <span id="visitor-count">0</span></p>
+    </div>
+    <div class="mt-2">
         <a href="admin.html" class="text-sm hover:text-blue-200">管理员入口</a>
     </div>
 </footer>
@@ -281,6 +284,32 @@
 
     document.getElementById('back-to-top').addEventListener('click', function() {
         window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // 访客计数
+    document.addEventListener('DOMContentLoaded', function() {
+        // 检查是否已经计过数
+        if (!sessionStorage.getItem('visited')) {
+            // 读取当前访客数
+            let visitorCount = localStorage.getItem('visitorCount');
+            visitorCount = visitorCount ? parseInt(visitorCount) : 5962;
+            
+            // 增加访客数
+            visitorCount++;
+            
+            // 保存到localStorage
+            localStorage.setItem('visitorCount', visitorCount.toString());
+            
+            // 在页面上显示
+            document.getElementById('visitor-count').textContent = visitorCount;
+            
+            // 设置sessionStorage标记，防止同一用户多次计数
+            sessionStorage.setItem('visited', 'true');
+        } else {
+            // 如果已经计过数，直接显示当前访客数
+            const visitorCount = localStorage.getItem('visitorCount') || '0';
+            document.getElementById('visitor-count').textContent = visitorCount;
+        }
     });
 </script>
 
