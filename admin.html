@@ -152,15 +152,17 @@
         <!-- 登录表单 -->
         <div class="login-container" id="loginContainer">
             <h2>管理员登录</h2>
-            <div class="form-group">
-                <label for="username">用户名</label>
-                <input type="text" id="username" placeholder="请输入用户名">
-            </div>
-            <div class="form-group">
-                <label for="password">密码</label>
-                <input type="password" id="password" placeholder="请输入密码">
-            </div>
-            <button class="btn" onclick="login()">登录</button>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" placeholder="请输入用户名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码" required>
+                </div>
+                <button type="submit" class="btn">登录</button>
+            </form>
         </div>
         
         <!-- 留言管理区域 -->
@@ -178,20 +180,15 @@
         const ADMIN_USERNAME = 'admin';
         const ADMIN_PASSWORD = 'password';
 
-        // 页面加载完成后检查登录状态
+        // 页面加载完成后显示登录表单
         document.addEventListener('DOMContentLoaded', function() {
-            checkLoginStatus();
+            showLoginForm();
+            // 添加登录表单提交事件监听器
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                login();
+            });
         });
-
-        // 检查登录状态
-        function checkLoginStatus() {
-            const isLoggedIn = localStorage.getItem('adminLoggedIn') === 'true';
-            if (isLoggedIn) {
-                showAdminContent();
-            } else {
-                showLoginForm();
-            }
-        }
 
         // 显示登录表单
         function showLoginForm() {
@@ -208,28 +205,37 @@
 
         // 登录函数
         function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            console.log('登录尝试:', username, password);
+            console.log('预期:', ADMIN_USERNAME, ADMIN_PASSWORD);
 
             if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-                localStorage.setItem('adminLoggedIn', 'true');
+                console.log('登录成功');
                 showAdminContent();
             } else {
+                console.log('登录失败');
                 alert('用户名或密码错误');
             }
         }
 
         // 退出登录函数
         function logout() {
-            localStorage.removeItem('adminLoggedIn');
+            isLoggedIn = false;
             showLoginForm();
         }
 
         // 加载留言
         function loadMessages() {
-            // 从localStorage读取留言
-            const messages = JSON.parse(localStorage.getItem('messages')) || [];
             const container = document.getElementById('messagesContainer');
+            let messages = [];
+            
+            // 安全读取localStorage
+            try {
+                messages = JSON.parse(localStorage.getItem('messages')) || [];
+            } catch (error) {
+                console.error('localStorage读取失败:', error);
+            }
             
             if (messages.length === 0) {
                 container.innerHTML = '<p>没有留言</p>';
@@ -265,14 +271,25 @@
         // 删除留言
         function deleteMessage(messageId) {
             if (confirm('确定要删除这条留言吗？')) {
-                // 从localStorage读取留言
-                let messages = JSON.parse(localStorage.getItem('messages')) || [];
+                let messages = [];
+                
+                // 安全读取localStorage
+                try {
+                    messages = JSON.parse(localStorage.getItem('messages')) || [];
+                } catch (error) {
+                    console.error('localStorage读取失败:', error);
+                    return;
+                }
                 
                 // 过滤掉要删除的留言
                 messages = messages.filter(message => message.id !== messageId);
                 
-                // 将更新后的留言保存回localStorage
-                localStorage.setItem('messages', JSON.stringify(messages));
+                // 安全保存localStorage
+                try {
+                    localStorage.setItem('messages', JSON.stringify(messages));
+                } catch (error) {
+                    console.error('localStorage保存失败:', error);
+                }
                 
                 // 重新加载留言
                 loadMessages();
